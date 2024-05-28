@@ -1,0 +1,9 @@
+FROM python:3.12-alpine3.19
+LABEL type=prometheus-container-exporter
+
+RUN mkdir /install
+WORKDIR /install
+
+COPY requirements.txt .
+RUN pip install --target=/install --no-cache-dir -r requirements.txt && \
+    rm requirements.txt

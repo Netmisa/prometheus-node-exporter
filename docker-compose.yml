@@ -1,0 +1,16 @@
+services:
+  prometheus_container_exporter:
+    image: ${REGISTRY_HOST:-localhost}/prometheus/container-exporter:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - "8000:8000"
+    networks:
+      - container_exporter
+
+networks:
+  container_exporter:
+    driver: bridge

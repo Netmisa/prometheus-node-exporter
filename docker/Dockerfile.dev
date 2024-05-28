@@ -1,0 +1,13 @@
+FROM python:3.12-alpine3.19
+
+ENV PYTHONPATH=/usr/local/lib
+
+WORKDIR /app
+
+COPY --from=prometheus-container-exporter:build /install /usr/local/lib
+RUN mv /usr/local/lib/bin/* /usr/local/bin/ && \
+    rm -rf /usr/local/lib/bin
+
+VOLUME [ "/app" ]
+
+ENTRYPOINT ["fastapi", "dev", "--port", "8080", "--host", "0.0.0.0", "src/main.py"]
