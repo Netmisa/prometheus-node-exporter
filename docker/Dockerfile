@@ -10,6 +10,8 @@ RUN mv /usr/local/lib/bin/* /usr/local/bin/ && \
 
 COPY ./src src
 
+EXPOSE 8000
+
 VOLUME [ "/var/run/docker.sock" ]
 
 ENTRYPOINT ["fastapi", "run", "src/main.py"]

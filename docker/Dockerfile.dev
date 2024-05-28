@@ -10,4 +10,6 @@ RUN mv /usr/local/lib/bin/* /usr/local/bin/ && \
 
 VOLUME [ "/app" ]
 
-ENTRYPOINT ["fastapi", "dev", "--port", "8080", "--host", "0.0.0.0", "src/main.py"]
+EXPOSE 8000
+
+ENTRYPOINT ["fastapi", "dev", "--port", "8000", "--host", "0.0.0.0", "src/main.py"]

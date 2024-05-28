@@ -5,6 +5,19 @@ This API export stats from all containers into prometheus format
 
 # How to use it ?
 
+
+```
+docker run \
+    --rm \
+    -it \
+    -v /var/run/docker.sock:/var/run/docker.sock:ro \
+    -p 8000:8000 \
+    netmisa/prometheus-container-exporter:latest
+```
+Then, go to `http://localhost:8000/`
+
+or
+
 ```
 make build
 
