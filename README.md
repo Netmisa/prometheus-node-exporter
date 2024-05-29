@@ -14,7 +14,7 @@ docker run \
     -p 8000:8000 \
     netmisa/prometheus-container-exporter:latest
 ```
-Then, go to `http://localhost:8000/`
+Then, go to `http://localhost:8000/metrics`
 
 or
 
@@ -28,7 +28,7 @@ docker run \
     -p 8000:8000 \
     localhost/prometheus/container-exporter:latest
 ```
-Then, go to `http://localhost:8000/`
+Then, go to `http://localhost:8000/metrics`
 
 or
 
@@ -37,7 +37,7 @@ make build
 
 make start
 ```
-Then, go to `http://localhost:8000/`
+Then, go to `http://localhost:8000/metrics`
 
 After
 

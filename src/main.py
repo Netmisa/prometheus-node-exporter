@@ -11,6 +11,6 @@ process = Process(logger)
 app = FastAPI()
 
 
-@app.get("/")
+@app.get("/metrics")
 def get_all_container_stats():
     return process.get_all_container_stats()
